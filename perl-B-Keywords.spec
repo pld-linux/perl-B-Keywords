@@ -6,13 +6,13 @@
 %define	pdir	B
 %define	pnam	Keywords
 Summary:	B::Keywords - Lists of reserved barewords and symbol names
-#Summary(pl.UTF-8):	
+Summary(pl.UTF-8):	B::Keywords - lista zarezerwowanych słów kluczowych i nazw symboli
 Name:		perl-B-Keywords
 Version:	1.06
 Release:	1
 License:	GPL v2 or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/J/JJ/JJORE/B-Keywords-1.06.tar.gz
+Source0:	http://www.cpan.org/modules/by-authors/id/J/JJ/JJORE/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	24f311df8a5f0174cc465e1949082db3
 URL:		http://search.cpan.org/dist/B-Keywords/
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -22,13 +22,18 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 B::Keywords supplies seven arrays of keywords: @Scalars, @Arrays,
-@Hashes, @Filehandles, @Symbols, @Functions, and @Barewords. The @Symbols
-array includes the contents of each of @Scalars, @Arrays, @Hashes, and
-@Filehandles.  Similarly, @Barewords adds a few non-function keywords
-and operators to the @Functions array.
+@Hashes, @Filehandles, @Symbols, @Functions, and @Barewords. The
+@Symbols array includes the contents of each of @Scalars, @Arrays,
+@Hashes, and @Filehandles. Similarly, @Barewords adds a few
+non-function keywords and operators to the @Functions array.
 
-# %description -l pl.UTF-8
-# TODO
+%description -l pl.UTF-8
+B::Keywords udostępnia siedem tablic słów kluczowych: @Scalars,
+@Arrays, @Hashes, @Filehandles, @Symbols, @Functions i @Barewords.
+Tablica @Symbols obejmuje zawartość każdej z tablic @Scalars,
+@Arrays, @Hashes i @Filehandles. Podobnie @Barewords dodaje do
+tablicy @Functions kilka słów kluczowych nie będących funkcjami oraz
+operatorów.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
