@@ -8,7 +8,7 @@ Summary:	B::Keywords - Lists of reserved barewords and symbol names
 Summary(pl.UTF-8):	B::Keywords - lista zarezerwowanych słów kluczowych i nazw symboli
 Name:		perl-B-Keywords
 Version:	1.29
-Release:	1
+Release:	2
 License:	GPL v2 or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/B/%{pdir}-%{pnam}-%{version}.tar.gz
