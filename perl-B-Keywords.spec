@@ -11,11 +11,13 @@ Version:	1.29
 Release:	2
 License:	GPL v2 or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-module/B/%{pdir}-%{pnam}-%{version}.tar.gz
+Source0:	https://www.cpan.org/modules/by-module/B/%{pdir}-%{pnam}-%{version}.tar.gz
 # Source0-md5:	42fe078471120b9fda9664cada845eb7
-URL:		http://search.cpan.org/dist/B-Keywords/
+URL:		https://metacpan.org/dist/B-Keywords
+BuildRequires:	perl-ExtUtils-MakeMaker
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -40,9 +42,12 @@ operatorów.
 %build
 %{__perl} Makefile.PL \
 	INSTALLDIRS=vendor
+
 %{__make}
 
-%{?with_tests:%{__make} test}
+%if %{with tests}
+%{__make} test
+%endif
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -55,6 +60,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc Changes README
+%doc Changes LICENSE
 %{perl_vendorlib}/B/Keywords.pm
 %{_mandir}/man3/B::Keywords.3pm*
